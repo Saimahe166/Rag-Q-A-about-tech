@@ -71,7 +71,7 @@ class VectorStore:
             except Exception as e:
                 print("documents are not added to vector store")
 
-    def _create_doc_id(self, url: str, timestamp: datetime) -> str:
+    def create_doc_id(self, url: str, timestamp: datetime) -> str:
         """Create unique document ID"""
         unique_string = f"{url}_{timestamp.isoformat()}"
         return hashlib.md5(unique_string.encode()).hexdigest()
